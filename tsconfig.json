@@ -1,0 +1,15 @@
+{
+    "include": [
+        "model/*.ts"
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "es5",
+        "types": [
+            "node"
+        ],
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true
+    }
+}

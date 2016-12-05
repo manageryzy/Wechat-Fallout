@@ -1,24 +1,10 @@
-require('./CheckIn');
-
-var CheckIn = {
-	t: 0, // timestamp
-	x: 0, // position.x
-	y: 0  // position.y
-};
-
-var Player = {
-	UID: "",
-	logs: {},
-	nickName: "",
-	HP: 0,
-	SAN: 0,
-	lastCheckIn: null, //Object.create(CheckIn),	
-	ctor: function(){
-	},
-	upd: function(){
-
-	}
-};
-
-P = Object.create(Player);
-P.lastCheckIn = Object.create(CheckIn);
+"use strict";
+var Player = (function () {
+    function Player(UID) {
+        this.UID = UID;
+        this.HP = 100;
+        this.SAN = 100;
+    }
+    return Player;
+}());
+exports.Player = Player;
