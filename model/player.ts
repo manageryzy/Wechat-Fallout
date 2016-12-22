@@ -1,21 +1,41 @@
 import {CheckIn} from './CheckIn';
 
-class Player
-{
-    private UID:string;
-	private nickName : string;
-	private HP:number;
-	private SAN:number;
-    private CheckIns : [CheckIn];
+class PlayerData{
+    UID:string = '';
+	nickName : string = 'no name';
+	HP:number = 100;
+	SAN:number = 100;
+    CheckIns : Array<CheckIn> = new Array<CheckIn>();
+}
 
-    public constructor(UID:string){
-        this.UID = UID;
-        this.HP = 100;
-        this.SAN = 100;
-        
+class Player extends PlayerData
+{
+    public constructor(UID?:string,nickName?:string,HP?:number,SAN?:number){
+        super();
+        if(UID){
+            this.UID = UID;
+        }
+
+        if(nickName){
+            this.nickName = nickName;
+        }
+
+        if(HP){
+            this.HP = HP;
+        }
+
+        if(SAN){
+            this.SAN = SAN;
+        }
     }
 }
 
+function GetPlayer():PlayerData {
+    let player = new Player("");
+    return player;
+}
+
 export{
-    Player
+    Player,
+    GetPlayer
 }
